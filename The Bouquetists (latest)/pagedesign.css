@@ -1,0 +1,13 @@
+body{background-color: #FFFFFF; color: #47474a; font-family: Arial, Helvetica, sans-serif;
+    background-image: url("imgs/background.png"); text-align: center;}
+nav{color: #73746F; line-height: 200%; font-family: "Lucida Console", monospace;text-align: center;
+    padding-bottom: 20px; }
+
+a:link{color: #73746F; text-decoration: none;}
+a:visited{color: #73746F; text-decoration: none;}
+a:hover{color: #CF9183; text-decoration: none;}
+
+.centerAllign{display: block; text-align: center; margin-left: auto; margin-right: auto; width: 40%;}
+            .cart{position: absolute; top: 8px; right: 16px;}
+            .underline{text-decoration: underline; text-decoration-color:#CF9183}
+    

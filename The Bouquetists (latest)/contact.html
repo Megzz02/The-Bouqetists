@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <script src="form_validate.js"></script>
+        <link rel="stylesheet" href="pagedesign.css">
+        <title>
+            The Bouquetist 
+        </title>
+        <meta charset="utf-8">
+        <style>
+            
+            form{max-width: fit-content; margin-left: auto; margin-right: auto;}
+
+            .image{ float: right; max-width: 100%; object-fit: contain;}
+            .container{display: flex; flex-direction: column;}
+            .flexbox{margin-top: 25px; margin-bottom: 25px; }
+            .button{
+                margin-right: 75px;
+                background-color: #CF9183;
+                border: #CF9183;
+                color: #FFFFFF;
+                font-size: 16px;
+                border-radius: 3px;}
+            .wrapper {margin-left: auto; margin-right: auto; width: 1180px;}
+    
+            #hrHeader{color: #CF9183;}
+            #hrFooter{color: #73746F;}
+            #box{width:500px; height: 290px; 
+                 border: 1px solid black; border-radius: 4px;
+                align-items: center; padding: 20px; margin: 20px; background-color: #f9fbf3; }
+            #box label{display: inline-block; width: 100px;
+            text-align: left; vertical-align: top; }
+            #box input{width: 70%; padding: 5px; margin-left: 5px; margin-bottom: 20px;}
+            #box textarea{width: 70%; padding: 5px;
+            margin-left: 5px; height: 150px; margin-bottom: 10px;} 
+            
+        </style>
+
+    </head>
+			
+    <header>
+    <div class="wrapper">
+
+        <a href="page_cart.php"  class="cart"><img src="imgs/cartSymbol.png" width="25px"></a>
+        <br><br>
+        <img src="imgs/shopName.png" class='centerAllign' alt="The Bouquetist">
+        <nav>
+            <b>
+                <a href="index.php">ABOUT US</a>
+                &nbsp;
+                <a href="products.html">PRODUCTS</a>
+                &nbsp;
+                <a href="contact.html">CONTACT US</a>
+                </b>
+        </nav>
+        <hr id="hrHeader">
+        
+    </div>
+    </header>
+
+    <body>
+    <div class="wrapper">
+
+        <br>
+        <h2 class="underline">Got a question? Reach out to us!</h2>
+        <br>
+        <div class="container">
+            <div class="flexbox">
+                <img src="imgs/mailSymbol.png" width="50px">
+                <br><br>
+                <b>Mail to: TheBouquestist@gmail.com</b>
+                <br>
+                <small>We usually reply within two hours</small>
+            </div>
+            <div class="flexbox">
+                <img src="imgs/phoneSymbol.jpg" width="55px">
+                <br><br>
+                <b>Give us a call: 06-7622880</b>
+                <br>
+                <small>(Operating Hours Mon-Sun, 9am-5pm)</small>
+            </div>
+            <div style="padding-top: 40px;">
+                <b>Fill out the form below</b>
+            </div>
+        </div>
+        <form name="Contact" action="page_contact.php" onsubmit = "return contact_form_validation()" method="post">
+            <div id="box">
+                <div>
+                    <label for="user_name">Name</label>
+                    <input type="text" id="user_name" name="user_name" >
+                </div>
+                <div>
+                    <label for="user_email">E-mail</label>
+                    <input type="email" id="user_email" name="user_email" >
+                </div>
+                <div>
+                    <label for="user_msg">Message</label>
+                    <textarea id="user_msg" name="user_msg" ></textarea>
+                </div>
+                <div>
+                    <label></label>
+                    <button class="button" type="submit">Send message</button>
+                </div>
+            </div>
+            </form>    
+
+        <br><br> 
+
+    </div>
+    </body>
+
+    <footer>
+    <div class="wrapper">
+
+        <hr id="hrFooter">
+        <small class="centerAllign">
+            &copy; The Bouquetist 2021
+            <br>
+            <img src="imgs/paymentSymbols.png" height="50px">
+        </small>
+    
+    </div>
+    </footer>
+
+
+</html>  

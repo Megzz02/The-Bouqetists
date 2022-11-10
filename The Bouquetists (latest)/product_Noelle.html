@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="pagedesign.css">
+        <style>
+        
+            ul{list-style-type: none;}
+
+            .centerAllign{display: block; text-align: center; margin-left: auto; margin-right: auto; width: 40%;}
+            .leftAllign{display: block; text-align: left; margin-left: auto; margin-right: auto; width: 40%;}
+            .cart{position: absolute; top: 8px; right: 16px;}
+            .about{margin: auto; width: 80%; padding: 10px;}
+            .underline{text-decoration: underline; text-decoration-color:#CF9183}
+            .image{float: center; max-width: 100%;  object-fit: cover;}
+            .button{
+                border: 0;
+                margin-top: 15px;
+                margin-right: 82px;
+                padding: 10px 20px 10px 20px;
+                background-color: #CF9183;
+                color: #FFFFFF;
+                font-size: 18px;
+                border-radius: 3px;}
+            .button:hover{color: #CF9183;
+                background-color: #dbddd4;}
+            .wrapper {margin-left: auto; margin-right: auto; width: 1180px;}
+            
+            #gallery{width: 500px; overflow-x:scroll; white-space: nowrap;}
+            #container{width: 50%;}
+            #hrHeader{color: #CF9183;}
+            #hrFooter{color: #73746F;}
+
+        </style>
+        <title>
+            The Bouquetist
+        </title>
+        <meta charset="utf-8">
+    </head>
+	
+     <header>
+    <div class="wrapper">
+
+        <a href="page_cart.php" class="cart"><img src="imgs/cartSymbol.png" width="25px"></a>
+        <br><br>
+        <img src="imgs/shopName.png" class='centerAllign' alt="The Bouquetist">
+        <nav>
+            <b>
+                <a href="index.php">ABOUT US</a>
+                &nbsp;
+                <a href="products.html">PRODUCTS</a>
+                &nbsp;
+                <a href="contact.html">CONTACT US</a>
+                </b>
+        </nav>
+        <hr id="hrHeader">
+    
+    </div>
+    </header>
+
+    <body>
+    <div class="wrapper">
+
+      <br>
+      <center>  
+        
+        <div id="container">
+
+            <div id="gallery">
+            <img src="imgs/theNoelle.jpg" width="500" height="400"  class='image'>
+            <img src="imgs/Top_Noelle.jpg" width="500" height="400"  class='image'>
+            </div>
+            <br>
+            <h2>THE NOELLE</h2>
+            <p>When lush roses and feathery astilbe unite, the results are pure magic. The Noelle is a wondrous addition to your festivities this season, whether you’re decorating your home, adding something eye-catching to your tablescape, or want to surprise someone special with a vibrant bouquet. This lovely mixed bouquet captures the spirit of the moment, bringing all the merry you need.</p>
+
+            <hr id="hrHeader">
+            <small>What's included:</small> 
+            <br>
+            <small>Roses, Scabiosa, Astilbe, Chrysanthemums, and Magnolia Leaves</small>
+            <br><br>
+
+            <form action="insert_product_quantity.php" method="post">
+
+                <h2 style="display:inline; padding-right: 15px;">RM159 </h2>
+                <button class="button" id="id" name="id" value="1" onclick="window.alert('Item added to cart')">Add to Cart</button>
+
+            </form>
+
+        </div>
+
+        <br><br>
+        <small>*this item has FREE nationwide shipping</small>
+
+      </center>
+        <br><br><br>
+    
+    </div>
+    </body>
+
+   <footer>
+    <div class="wrapper">
+
+        <hr id="hrFooter">
+        <div>
+        <small class="centerAllign">
+            &copy; The Bouquetist 2021
+            <br>
+            <img src="imgs/paymentSymbols.png" height="50px">
+        </small>
+    
+    </div>
+    </footer>

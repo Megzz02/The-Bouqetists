@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <link rel="stylesheet" href="pagedesign.css">
+        <style>
+        
+            ul{list-style-type: none;}
+            h1{font-style: italic; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+            
+            .centerAllign{display: block; text-align: center; margin-left: auto; margin-right: auto; width: 40%;}
+            .leftAllign{display: block; text-align: left; margin-left: auto; margin-right: auto; width: 40%;}
+            .cart{position: absolute; top: 8px; right: 16px;}
+            .about{margin: auto; width: 80%; padding: 10px;}
+            .underline{text-decoration: underline; text-decoration-color:#CF9183}
+            .image{ float: center; max-width: 100%; object-fit: cover;  padding: 10px;}
+            .ul{ list-style-type: none; display: block; margin-left: auto; margin-right: auto; width: 80%; }
+            .li{ display: inline-block; width: 255px; padding-bottom: 10px; margin: 10px; text-align: center; font-size: larger; font-family: "Lucida Console", monospace;
+            transition: transform .2s; 
+            margin: 0 auto;}
+            .li:hover {transform: scale(1.2)}
+
+            .wrapper {margin-left: auto; margin-right: auto; width: 1180px;}
+            
+            #hrHeader{color: #CF9183;}
+            #hrFooter{color: #73746F;}
+
+        </style>
+        <title>
+            The Bouquetist
+        </title>
+        <meta charset="utf-8">
+    </head>
+	
+    <header>
+    <div class="wrapper">
+    
+        <a href="page_cart.php" class="cart"><img src="imgs/cartSymbol.png" width="25px"></a>
+        <br><br>
+        <img src="imgs/shopName.png" class='centerAllign' alt="The Bouquetist">
+        <nav>
+            <b>
+                <a href="index.php">ABOUT US</a>
+                &nbsp;
+                <a href="products.html">PRODUCTS</a>
+                &nbsp;
+                <a href="contact.html">CONTACT US</a>
+            </b>
+        </nav>
+        <hr id="hrHeader">
+    
+    </div>
+    </header>
+
+    <body>
+    <div class="wrapper">
+    <br>
+    
+        <center>
+      			<h2 class="underline">Our Products</h2>
+
+                <h1>The Christmast Collection</h1>
+                <small>Collection ends on December 24th 2021, 00:00:00. Grab them before they disappear in:</small>
+                <p id="demo"></p>
+      
+    	<div>
+
+        <ul class="ul">
+            <li class="li"><a href="product_Nutcracker.html"><img src="imgs/theNutcracker.jpg" width="500" height="400"  class='image'>THE NUTCRACKER</a></li>
+            <li class="li"><a href="product_Noelle.html"><img src="imgs/theNoelle.jpg" width="500" height="400"  class='image'>THE NOELLE</a></li>
+            <li class="li"><a href="product_Wintergreen.html"><img src="imgs/theWintegreen.jpg"width="500" height="400"  class='image'>THE WINTERGREEN</a></li>
+        </ul>
+
+      </center>
+        <br><br><br>
+    
+    </div>
+    </body>
+
+    <script>
+
+        var countDownDate = new Date("December 24, 2021 00:00:00").getTime();
+        
+        var x = setInterval(function() {
+
+          var now = new Date().getTime();
+          var distance = countDownDate - now;
+
+          var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+          var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+          var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+          var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+            
+          document.getElementById("demo").innerHTML = days + "d " + hours + "h "
+          + minutes + "m " + seconds + "s ";
+            
+          if (distance < 0) {
+            clearInterval(x);
+            document.getElementById("demo").innerHTML = "COLLECTION ENDED";
+          }
+
+        }, 1000);
+
+    </script>
+
+   <footer>
+    <div class="wrapper">
+
+        <hr id="hrFooter">
+        <div>
+        <small class="centerAllign">
+            &copy; The Bouquetist 2021
+            <br>
+            <img src="imgs/paymentSymbols.png" height="50px">
+        </small>
+    
+    </div>    
+    </footer>

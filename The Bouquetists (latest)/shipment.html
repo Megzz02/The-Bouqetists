@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <link rel="stylesheet" href="pagedesign.css">
+        <script src="form_validate.js"></script>
+        <style>
+            
+            label{
+                display: inline-block;
+                width: 100px;
+                padding-bottom: 10px;
+                padding-left: 10px;
+            }
+    
+            input{
+                display: inline-block;
+                width: 180px;
+            }
+            
+            
+            textarea{
+                width: 180px;
+                height: 40px;
+            }
+    
+            .center{
+                margin-left: auto;
+                margin-right: auto;
+                width: auto;
+                text-align: left ;
+            }
+            .centerAllign{display: block; text-align: center; margin-left: auto; margin-right: auto; width: 40%;}
+            .cart{position: absolute; top: 8px; right: 16px;}
+            .about{margin: auto; width: 80%; padding: 10px;}
+            .image{ float: right; max-width: 100%; object-fit: contain;}
+            .underline{text-decoration: underline; text-decoration-color:#CF9183}
+            .button{
+                font-size: 14px;}
+            
+            #hrHeader{color: #CF9183;}
+            #hrFooter{color: #73746F;}
+            #formWrapper{text-align: center; margin-left: auto; margin-right: auto; width: 1200px;};
+    
+            
+            
+        </style>
+        <title>
+            The Bouquetist
+        </title>
+        <meta charset="utf-8">
+    </head>
+
+    <header>
+    <div class="wrapper">
+
+        <a href="page_cart.php" class="cart"><img src="imgs/cartSymbol.png" width="25px"></a>
+        <br><br>
+        <img src="imgs/shopName.png" class='centerAllign' alt="The Bouquetist">
+        <nav>
+            <b>
+                <a href="index.php">ABOUT US</a>
+                &nbsp;
+                <a href="products.html">PRODUCTS</a>
+                &nbsp;
+                <a href="contact.html">CONTACT US</a>
+            </b>
+        </nav>
+        <hr id="hrHeader">
+
+    </div>
+    </header>
+
+    <body>
+        <br>
+        <div id="formWrapper">
+
+        <h2 class="underline">Shipping Details</h2>
+        <p>Please enter your shipping details.</p>
+            <hr>
+            <br>
+            
+            <form name = "Shipment" action="page_shipment.php" method="post" onsubmit="return shipment_form_validation()">
+            <table class="center" >
+                <tr>
+                    <td>
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="fullName" >
+                    </td>
+                    <td>
+                        <label for="contactNum">Contact</label>
+                        <input type="tel" id="contactNum" name="contactNum" minlength = "11" maxlength="13" placeholder="+60" value="+60" >
+                    </td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;">
+                        <label for="address">Address <br></label>
+                        <textarea id="address" name="address"></textarea>
+                    </td>
+                    <td>
+                        <label for="state">State</label>
+                        <select id="state" name="state">
+                        <option value=""></option>
+                        <option value="Johor">Johor</option>
+                        <option value="Kedah">kedah</option>
+                        <option value="Kelantan">Kelantan</option>
+                        <option value="Malacca">Malacca</option>
+                        <option value="Negeri Sembilan">Negeri Sembilan</option>
+                        <option value="Pahang">Pahang</option>
+                        <option value="Penang">Penang</option>
+                        <option value="Perak">Perak</option>
+                        <option value="Perlis">Perlis</option>
+                        <option value="Sabah">Sabah</option>
+                        <option value="Sarawak">Sarawak</option>
+                        <option value="Selangor">Selangor</option>
+                        <option value="Terengganu">Terengganu</option>
+                        <option value="Kuala Lumpur">Kuala Lumpur</option>
+                        <option value="Labuan">Labuan</option>
+                        <option value="Putrajaya">Putrajaya</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 
+                        <label for="zipcode">Zip code</label>
+                        <input type="text" id="zipcode" name="zipcode" >
+                    </td>
+                    <td>
+                        <label for="city">City</label>
+                        <input type="text" id="city" name="city">
+                    </td>
+                </tr>
+            </table>
+
+                <br><br>
+                
+                <br>
+
+                <button class="button" onclick="window.location.href ='page_cart.php'">Back to Cart</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button class="button">Continue to Payment</button>
+
+                <br><br>
+                <hr>
+
+                </form>
+
+            </div>
+            
+            <br><br><br>
+        </p>
+        </div>
+    </body>
+
+    <footer>
+    <div class="wrapper">
+
+        <hr id="hrFooter">
+        <small class="centerAllign">
+            &copy; The Bouquetist 2021
+            <br>
+            <img src="imgs/paymentSymbols.png" height="50px">
+        </small>
+    
+    </div>
+    </footer>
+
+
+</html>

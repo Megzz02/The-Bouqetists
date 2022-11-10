@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <script src="form_validate.js"></script>
+        <style>
+            body{
+                background-color: #FFFFFF; 
+                color:#47474A; font-family: Arial, Helvetica, sans-serif;  
+                background-image: url("imgs/background.png")
+            }
+
+            nav{
+                color: #73746F; 
+                line-height: 200%; 
+                font-family: "Lucida Console", monospace;text-align: center;
+                padding-bottom: 20px; 
+            }
+
+            form {
+                background-color:#E8E8E8;
+                max-width: fit-content;
+                margin:auto;
+                padding: 2px 14px 10px 14px;
+            }
+
+            form > div{
+                padding-bottom: 20px;
+            }
+
+            label{
+                display: inline-block;
+                width: 100px;
+            }
+        
+            a:link{color: #73746F; text-decoration: none;}
+            a:visited{color: #73746F; text-decoration: none;}
+            a:hover{color: #CF9183; text-decoration: none;}
+        
+            .centerAllign{display: block; text-align: center; margin-left: auto; margin-right: auto; width: 40%;}
+            .cart{position: absolute; top: 8px; right: 16px;}
+            .underline{text-decoration: underline; text-decoration-color:#CF9183}
+            .buttonsection{
+                display: flex;
+                justify-content: center;
+                padding-top: 50px;
+                gap: 30px;
+            }
+            .wrapper {
+                margin-left: auto; 
+                margin-right: auto; 
+                width: 1180px;
+            }
+            .button{
+                background-color: #CF9183;
+                color: #FFFFFF;
+                font-size: 16px;
+                border-radius: 3px;
+            }
+            #hrHeader{color: #CF9183;}
+            #hrFooter{color: #73746F;}
+            #row{display: flex;}
+            #row > div{padding-right: 20px;}
+
+            .button{
+                background-color: #CF9183;
+                color: #FFFFFF;
+                font-size: 16px;
+                border-radius: 3px;
+            }
+
+        </style>
+        <title>
+            The Bouquetist
+        </title>
+        <meta charset="utf-8">
+        
+    </head>
+
+    <header>
+    <div class="wrapper">
+        <a href="page_cart.php" class="cart"><img src="imgs/cartSymbol.png" width="25px"></a>
+        <br><br>
+        <img src="imgs/shopName.png" class='centerAllign' alt="The Bouquetist">
+        <nav>
+            <b>
+                <a href="index.php">ABOUT US</a>
+                &nbsp;
+                <a href="products.html">PRODUCTS</a>
+                &nbsp;
+                <a href="contact.html">CONTACT US</a>
+            </b>
+        </nav>
+        <hr id="hrHeader">
+    
+    </div>
+    </header>
+
+    <body>
+    <div class="wrapper">
+    
+        <br>
+        <form name="Payment" action="page_payment.php" onsubmit="return payment_form_validation()" method="post" >
+            <h3>Billing Details</h3>
+            <div> 
+                <label for="fname">First Name</label>
+                <input type="text" id="fname" name="fname" size="40"  title="Names should contain only aphabets." >                
+            </div>
+            <div>
+                 <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" size="40" title="Names should contain only aphabets." >
+            </div>
+            <div> 
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" size="40" >
+            </div>
+            <div> 
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" minlength = "11" maxlength="13" placeholder="+60xxxxxxxxx" value="+60" size="40" >
+            </div>
+            <br>
+    
+        <h3>Credit/Debit Card Payment</h3>
+            <div>
+                <label for="cardnum">Card Number</label>
+                <input type="text" id="cardnum" name="cardnum" size="40" minlength="15" maxlength="16" title="A Visa or Mastercard card number should contain 16 digits in total. &#010;An American Express card number should contain 15 digits in total."  >   
+            </div>
+            <div id="row">  
+                <div>  
+                    <label for="ExpDate">Card Expiry</label>
+                    <input type="text" id="expmonth" name="expmonth" placeholder= "MM" minlength="2" maxlength="2" size="2" >
+                    <input type="text" id="expyear" name="expyear" placeholder= "YY" minlength="2" maxlength="2" size="2" >
+                </div>
+                <div>
+                    <label for="cvv">CVV</label>
+                    <input type="text" name="cvv" id="cvv" placeholder="---" size="4" minlength="3" maxlength="4" title="A CVV number should contain only 3 or 4 digits. It is found on the back of a debit/credit card." >
+                </div>
+            </div> 
+            <div class="buttonsection">
+                <a>
+                    <input type="button" class="button" value="Back to Shipping">
+                </a>
+                <input type="submit" class="button" onclick = "confirmsubmit()" value="Confirm Purchase">
+            </div>          
+        </form>
+        <br>
+
+    </div>
+    </body>
+
+    <footer>
+    <div class="wrapper">
+
+        <hr id="hrFooter">
+            <small class="centerAllign">
+                &copy; The Bouquetist 2021
+                <br>
+                <img src="imgs/paymentSymbols.png" height="50px">
+            </small>
+    
+    </div>
+    </footer>
+</html>  
