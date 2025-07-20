@@ -1,6 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+// Use centralized config instead of separate files
+require_once('config.php');
+
+// Initialize database tables if they don't exist
+function initializeDatabase() {
+    $handler = getDBConnection();
+    
+    // Create product_list table
+    $productTable = "CREATE TABLE IF NOT EXISTS product_list(
+        product_id INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        product_name VARCHAR(30) NOT NULL, 
+        product_price FLOAT(6,2) NOT NULL,
+        quantity INT(3),
+        total_price FLOAT(6,2)
+    )";
+    mysqli_query($handler, $productTable);
+    
+    // Create other necessary tables
+    $billingTable = "CREATE TABLE IF NOT EXISTS billing_info(
+        billing_id INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        first_name VARCHAR(30) NOT NULL,
+        last_name VARCHAR(30) NOT NULL,
+        email VARCHAR(50) NOT NULL,
+        address VARCHAR(100) NOT NULL,
+        city VARCHAR(30) NOT NULL,
+        postal_code VARCHAR(10) NOT NULL
+    )";
+    mysqli_query($handler, $billingTable);
+    
+    $contactTable = "CREATE TABLE IF NOT EXISTS contact_info(
+        contact_id INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        name VARCHAR(60) NOT NULL,
+        email VARCHAR(50) NOT NULL,
+        message TEXT NOT NULL
+    )";
+    mysqli_query($handler, $contactTable);
+    
+    $shipmentTable = "CREATE TABLE IF NOT EXISTS shipment_info(
+        shipment_id INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        first_name VARCHAR(30) NOT NULL,
+        last_name VARCHAR(30) NOT NULL,
+        address VARCHAR(100) NOT NULL,
+        city VARCHAR(30) NOT NULL,
+        postal_code VARCHAR(10) NOT NULL
+    )";
+    mysqli_query($handler, $shipmentTable);
+    
+    $orderTable = "CREATE TABLE IF NOT EXISTS order_list(
+        order_id INT(4) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+        billing_id INT(4),
+        shipment_id INT(4),
+        order_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )";
+    mysqli_query($handler, $orderTable);
+    
+    // Insert sample products if table is empty
+    $checkProducts = mysqli_query($handler, "SELECT COUNT(*) as count FROM product_list");
+    $row = mysqli_fetch_assoc($checkProducts);
+    
+    if ($row['count'] == 0) {
+        $sampleProducts = [
+            "INSERT INTO product_list (product_name, product_price, quantity, total_price) VALUES ('Rose Bouquet', 25.99, 10, 259.90)",
+            "INSERT INTO product_list (product_name, product_price, quantity, total_price) VALUES ('Tulip Arrangement', 18.50, 15, 277.50)",
+            "INSERT INTO product_list (product_name, product_price, quantity, total_price) VALUES ('Mixed Flowers', 32.00, 8, 256.00)",
+            "INSERT INTO product_list (product_name, product_price, quantity, total_price) VALUES ('Sunflower Bunch', 22.75, 12, 273.00)",
+            "INSERT INTO product_list (product_name, product_price, quantity, total_price) VALUES ('Lily Arrangement', 28.99, 6, 173.94)"
+        ];
+        
+        foreach ($sampleProducts as $query) {
+            mysqli_query($handler, $query);
+        }
+    }
+}
+
+// Initialize database
+initializeDatabase();
+?>
 
 <style>
     body{background-color: #FFFFFF; color:#47474A; font-family: Arial, Helvetica, sans-serif;  background-image: url("imgs/background.png")}
@@ -31,20 +109,6 @@
         </title>
         <meta charset="utf-8">
     </head>
-
-        <?php
-        
-        require('create_db.php');
-        
-        require('table_product.php');
-        require('insert_product_data.php');
-
-        require('table_shipment.php');
-        require('table_billing.php');
-        require('table_contact.php');
-        require('table_order.php');
-        
-        ?>
 
     <header>
     <div class="wrapper">
