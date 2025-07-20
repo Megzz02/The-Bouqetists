@@ -1,0 +1,12 @@
+{
+    "name": "bouqetists/flower-shop",
+    "description": "The Bouqetists - Online Flower Shop eCommerce Platform",
+    "type": "project",
+    "require": {
+        "php": "^8.0",
+        "ext-mysqli": "*"
+    },
+    "scripts": {
+        "start": "php -S 0.0.0.0:$PORT index.php"
+    }
+} 

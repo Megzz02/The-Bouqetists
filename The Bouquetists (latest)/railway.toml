@@ -1,0 +1,10 @@
+[build]
+# Use PHP buildpack
+builder = "heroku/php"
+
+[deploy]
+# Start command for Railway
+startCommand = "php -S 0.0.0.0:$PORT index.php"
+
+[env]
+# Environment variables will be set in Railway dashboard 
