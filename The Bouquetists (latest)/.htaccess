@@ -1,0 +1,14 @@
+DirectoryIndex index.php
+
+# Enable rewrite engine
+RewriteEngine On
+
+# Force HTTPS (optional for production)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Handle missing files
+<Files ~ "^.*\.(php|html)$">
+    Order allow,deny
+    Allow from all
+</Files> 

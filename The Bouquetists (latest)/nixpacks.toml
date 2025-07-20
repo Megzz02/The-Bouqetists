@@ -1,0 +1,11 @@
+[providers]
+php = "8.1"
+
+[variables]
+PORT = "8000"
+
+[phases.build]
+cmd = "composer install --no-dev --optimize-autoloader"
+
+[phases.start]
+cmd = "php -S 0.0.0.0:$PORT index.php" 

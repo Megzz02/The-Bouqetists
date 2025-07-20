@@ -3,7 +3,7 @@
     "description": "The Bouqetists - Online Flower Shop eCommerce Platform",
     "type": "project",
     "require": {
-        "php": "^8.0",
+        "php": "^7.4|^8.1",
         "ext-mysqli": "*"
     },
     "scripts": {

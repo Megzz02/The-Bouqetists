@@ -1,6 +1,5 @@
 [build]
-# Use PHP buildpack
-builder = "heroku/php"
+# Let Railway auto-detect PHP
 
 [deploy]
 # Start command for Railway
